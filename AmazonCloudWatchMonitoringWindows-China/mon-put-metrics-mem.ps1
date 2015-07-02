@@ -225,11 +225,6 @@ if($region -eq "cn-north-1")
  return "https://monitoring." + $region + ".amazonaws.com/"
 }
 
-function get-endpoint {
-	$region = get-region
-	return "https://monitoring." + $region + ".amazonaws.com.cn/"
-}
-
 ### Function that creates metric data which will be added to metric list that will be finally pushed to cloudwatch. ###
 function append_metric   {
 	$metricdata = New-Object Amazon.Cloudwatch.Model.MetricDatum
