@@ -213,7 +213,10 @@ function get-metadata {
 	$fullurl = $baseurl + $extendurl
 	return ($wc.DownloadString($fullurl))
 }
-
+function get-region {
+	$az = get-metadata ("/placement/availability-zone")
+	return ($az.Substring(0, ($az.Length -1)))
+}
 function get-endpoint 
 {
  $region = get-region
